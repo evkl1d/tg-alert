@@ -6,7 +6,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 #CHAT_ID="xxxx"
-CHAT_ID="xxxxxxxx"
+CHAT_ID="xxxxxxxxxx"
 
 # Read configuration parameters
 alert_file = open(sys.argv[1])
@@ -23,7 +23,7 @@ agent = alert_json['agent']['name'] if 'name' in alert_json['agent'] else "N/A"
 rule_id = alert_json['rule']['id'] if 'id' in alert_json['rule'] else None
 
 # Фильтрация по rule.id и alert_level (можно настроить под свои нужды)
-if rule_id == 100303 and alert_level in ['high', 'critical']:  # Замените 'high', 'critical' на нужные уровни
+if rule_id == 510:  # Замените 'high', 'critical' на нужные уровни
     # Generate request
     msg_data = {}
     msg_data['chat_id'] = CHAT_ID
